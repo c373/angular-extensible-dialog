@@ -1,0 +1,18 @@
+<app-base-dialog [title]="'Prompt'">
+    <ng-container content>
+        <div style="display: flex; flex-flow: column wrap;">
+            <p>Here are additional instructions to read.</p>
+            <p>Please read this message carefully before proceeding.</p>
+            <mat-form-field appearance="outline" style="margin-top: 15px;">
+                <mat-label>Outline form field</mat-label>
+                <input [(ngModel)]="this.data.input" matInput placeholder="Placeholder">
+                <mat-hint>This is a hint</mat-hint>
+            </mat-form-field>
+        </div>
+    </ng-container>
+    <ng-container actions>
+        <button mat-flat-button color="primary" (click)="onSend()"
+            [mat-dialog-close]="data">Send</button>
+        <button mat-flat-button color="warn" (click)="onCancel()" [mat-dialog-close]="data">Cancel</button>
+    </ng-container>
+</app-base-dialog>

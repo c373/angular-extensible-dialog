@@ -1,0 +1,10 @@
+<app-base-dialog [title]="'Are you sure?'">
+    <ng-container content>
+        <p>This is a warning message about the action you are about to take</p>
+        <p>Please read this message carefully before proceeding.</p>
+    </ng-container>
+    <ng-container actions>
+        <button mat-flat-button color="primary" [mat-dialog-close]="true">Ok</button>
+        <button mat-flat-button color="warn" [mat-dialog-close]="false">Cancel</button>
+    </ng-container>
+</app-base-dialog>

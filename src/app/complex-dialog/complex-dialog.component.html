@@ -1,0 +1,22 @@
+<app-base-dialog [title]="'Complex Dialog Prompt'">
+    <ng-container content>
+        <div style="display: flex; flex-flow: column wrap;">
+            <p>Here are additional instructions to read.</p>
+            <p>Please read this message carefully before proceeding.</p>
+            <mat-form-field appearance="outline" style="margin-top: 15px;">
+                <mat-label>Outline form field</mat-label>
+                <input [(ngModel)]="this.data.input" matInput placeholder="Placeholder">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>This is a hint</mat-hint>
+            </mat-form-field>
+        </div>
+    </ng-container>
+    <ng-container actions>
+        <button mat-flat-button color="primary" (click)="onOk()"
+            [mat-dialog-close]="data">Ok</button>
+        <button mat-flat-button color="warn" (click)="onMaybe()"
+            [mat-dialog-close]="data">Maybe</button>
+        <button mat-flat-button color="warn" (click)="onNo()"
+            [mat-dialog-close]="data">No</button>
+    </ng-container>
+</app-base-dialog>
