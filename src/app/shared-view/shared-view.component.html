@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Input/Output Example</mat-card-title>
+  </mat-card-header>
+  <mat-card-content style="display: flex; flex-flow: column wrap;">
+    <p>The actions at the bottom of this card are contained in a seperate
+    component.</p>
+    <p>The buttons are tied to functions in the parent component through event
+    emitters.</p>
+      <ng-container [ngSwitch]="this.state">
+        <ng-template [ngSwitchCase]="'check'">
+          <div style="display: flex; flex-flow: row wrap; align-items: center;
+              justify-content: center;">
+            <mat-icon color="{{this.color}}" style="margin-right: 8px;">{{this.state}}</mat-icon>
+            <p style="margin: 0;">Saved!</p>
+          </div>
+        </ng-template>
+        <ng-template [ngSwitchCase]="'help'">
+          <div style="display: flex; flex-flow: row wrap; align-items: center;
+              justify-content: center;">
+            <mat-icon color="{{this.color}}" style="margin-right: 8px;">{{this.state}}</mat-icon>
+            <p style="margin: 0;">Save?</p>
+          </div>
+        </ng-template>
+        <ng-template [ngSwitchCase]="'close'">
+          <div style="display: flex; flex-flow: row wrap; align-items: center;
+              justify-content: center;">
+            <mat-icon color="{{this.color}}" style="margin-right: 8px;">{{this.state}}</mat-icon>
+            <p style="margin: 0;">Cancelled!</p>
+          </div>
+        </ng-template>
+      </ng-container>
+  </mat-card-content>
+  <mat-card-actions>
+    <app-save-cancel-buttons
+        (saveEvent)="onSave($event)"
+        (cancelEvent)="onCancel($event)"
+        (resetEvent)="onReset($event)"></app-save-cancel-buttons>
+  </mat-card-actions>
+</mat-card>
+

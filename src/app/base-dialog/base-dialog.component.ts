@@ -1,9 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-interface DialogData {
-    result: boolean;
-}
-
 @Component({
   selector: 'app-base-dialog',
   templateUrl: './base-dialog.component.html',

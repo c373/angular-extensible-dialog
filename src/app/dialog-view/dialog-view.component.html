@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Dialog Component Example</mat-card-title>
+  </mat-card-header>
+  <mat-card-content style="display: flex; flex-flow: column wrap;">
+    <p>Click one of the actions below for a demo of each component!</p>
+    <mat-form-field appearance="outline">
+      <mat-label>User Input</mat-label>
+      <input matInput placeholder="Set this in a dialog" [(ngModel)]="this.userInput"
+      readonly>
+      <mat-icon color="{{this.color}}" matSuffix>{{this.state}}</mat-icon>
+      <mat-hint>* This field cannot be edited directly</mat-hint>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button (click)="this.openConfirm()">Confirm</button>
+    <button mat-flat-button (click)="this.openInput()">Input</button>
+    <button mat-flat-button (click)="this.openComplex()">Complex</button>
+    <button mat-flat-button (click)="this.reset()">Reset</button>
+  </mat-card-actions>
+</mat-card>
+
