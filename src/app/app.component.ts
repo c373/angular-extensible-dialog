@@ -107,6 +107,6 @@ enum State {
 enum Color {
     check_mark = 'primary',
     close = 'warn',
-    help = 'accent',
-    error = 'warn'
+    help = 'primary',
+    error = 'accent'
 }
